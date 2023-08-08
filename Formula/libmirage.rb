@@ -5,6 +5,12 @@ class Libmirage < Formula
   sha256 "257f4690c9195749ea936c4b44ada3e449b352dadaa107f31a1ed10f7b6df2a6"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/libmirage-3.2.6"
+    sha256 ventura:      "1da13744ae5936e8719a92fd8270aa21e34fc287fb7b6bfd45c92323c4d6a2b0"
+    sha256 x86_64_linux: "f70d7b6a1f327b605de0afa211ab67a51abe0ae374cbdf2f15f5e2b64639d315"
+  end
+
   depends_on "cmake" => :build
   depends_on "gettext" => :build
   depends_on "gobject-introspection" => :build

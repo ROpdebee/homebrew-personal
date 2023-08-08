@@ -5,6 +5,12 @@ class ImageId < Formula
   sha256 "9ae16f4a938d351df5468e8d0ba732fde648dc4f1a1212e05d79ab312f8d7947"
   license "GPL-2.0-or-later"
 
+  bottle do
+    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/image-id-2.1.0"
+    sha256 cellar: :any,                 ventura:      "73353a776856427d4791bc74e96566ef0bfb6971c4084352bd37fa65e8531019"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "807647562477c9b91998963013bc58deb388e3d226d56dfabf404f45483c4abc"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libdiscid"
   depends_on "libmirage"

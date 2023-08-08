@@ -5,6 +5,12 @@ class ScantailorAdvanced < Formula
   sha256 "db41c3a1ba0ecfc00a40a4efe2bcc9d2abb71ecb77fdc873ae6553b07a228370"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/scantailor-advanced-1.0.19"
+    sha256 cellar: :any,                 ventura:      "9b9ff08c05e06fa455d93512f73a42ab5edc4f95d1b759d78c33ce3abfc12247"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b9e3bdecca12c5b67d1ec6ccd38417b0efcf14d0755f9c3803d4ec86c606bc1d"
+  end
+
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "jpeg-turbo"

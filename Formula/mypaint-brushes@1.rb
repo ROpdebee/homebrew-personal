@@ -5,6 +5,12 @@ class MypaintBrushesAT1 < Formula
   sha256 "fef66ffc241b7c5cd29e9c518e933c739618cb51c4ed4d745bf648a1afc3fe70"
   license "CC0-1.0"
 
+  bottle do
+    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/mypaint-brushes@1-1.3.1"
+    sha256 cellar: :any_skip_relocation, ventura:      "5d99208380768992e38bc1553212136a7820801cfa64f44f4224c2a2a62fb97c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "24524176759a0469da35af73718bf2fc67658ecf6ed7ea3a7cb4637594f7369e"
+  end
+
   keg_only "conflicts with mypaint-brushes"
 
   depends_on "libmypaint@1.4"

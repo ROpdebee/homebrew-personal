@@ -5,6 +5,12 @@ class LibmypaintAT14 < Formula
   sha256 "59d13b14c6aca0497095f29ee7228ca2499a923ba8e1dd718a2f2ecb45a9cbff"
   license "ISC"
 
+  bottle do
+    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/libmypaint@1.4-1.4.0"
+    sha256 cellar: :any,                 ventura:      "39325569c1afb50f98dbcb13d82b1b3c6bb387380516f25067da278901d636d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "53b83415fb20c9085dcf6f38d4d40d8c8d0e3454f3b97a9ca6572b61e86d230f"
+  end
+
   keg_only "conflicts with libmypaint"
 
   depends_on "intltool" => :build

@@ -9,6 +9,12 @@ class Isrcsubmit < Formula
   sha256 "fe1078e332b09d259b87fb15959a143916bd31b09a37a54917a35cfb0fe6b3d6"
   license "GPL-3.0-only"
 
+  bottle do
+    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/isrcsubmit-3.0.0-dev"
+    sha256 cellar: :any_skip_relocation, ventura:      "804abc9cc8d579d8d30b18e7692777a4fb11f2036d03de17b8fcbaa91e433584"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bfdc77a72f119aa67571d0d524e2cb040e2e5f5e0f493e230bde7b9e29102b16"
+  end
+
   depends_on "keyring"
   depends_on "libdiscid"
   depends_on "python@3.12"

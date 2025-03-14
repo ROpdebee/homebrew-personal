@@ -7,9 +7,8 @@ class ImageId < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/image-id-2.1.0"
-    sha256 cellar: :any,                 ventura:      "73353a776856427d4791bc74e96566ef0bfb6971c4084352bd37fa65e8531019"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "807647562477c9b91998963013bc58deb388e3d226d56dfabf404f45483c4abc"
+    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/image-id-2.1.0_1"
+    sha256 cellar: :any, ventura: "cfe029eb7cacc6fa304630ff8f4ae150c21d5e89bd57c82692a040ea43c7d5e3"
   end
 
   depends_on "pkg-config" => :build

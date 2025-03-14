@@ -11,9 +11,8 @@ class Isrcsubmit < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/isrcsubmit-3.0.0-dev"
-    sha256 cellar: :any_skip_relocation, ventura:      "804abc9cc8d579d8d30b18e7692777a4fb11f2036d03de17b8fcbaa91e433584"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "bfdc77a72f119aa67571d0d524e2cb040e2e5f5e0f493e230bde7b9e29102b16"
+    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/isrcsubmit-3.0.0-dev_1"
+    sha256 cellar: :any_skip_relocation, ventura: "84e2ed371c4f7f4d98267e245de16203f865b935d43e009945833f0d94296527"
   end
 
   depends_on "keyring"

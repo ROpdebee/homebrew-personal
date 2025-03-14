@@ -4,6 +4,7 @@ class ImageId < Formula
   url "https://github.com/kepstin/image-id/releases/download/v2.1.0/image-id-2.1.0.tar.gz"
   sha256 "9ae16f4a938d351df5468e8d0ba732fde648dc4f1a1212e05d79ab312f8d7947"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/image-id-2.1.0"

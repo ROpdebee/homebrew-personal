@@ -8,6 +8,7 @@ class Isrcsubmit < Formula
   version "3.0.0-dev"
   sha256 "fe1078e332b09d259b87fb15959a143916bd31b09a37a54917a35cfb0fe6b3d6"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
     root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/isrcsubmit-3.0.0-dev"
@@ -17,7 +18,7 @@ class Isrcsubmit < Formula
 
   depends_on "keyring"
   depends_on "libdiscid"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "musicbrainzngs" do
     url "https://files.pythonhosted.org/packages/0a/67/3e74ae93d90ceeba72ed1a266dd3ca9abd625f315f0afd35f9b034acedd1/musicbrainzngs-0.7.1.tar.gz"
@@ -37,7 +38,7 @@ class Isrcsubmit < Formula
     virtualenv_install_with_resources
 
     # we depend on keyring, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.12")
+    site_packages = Language::Python.site_packages("python3.13")
     keyring = Formula["keyring"].opt_libexec
     (libexec/site_packages/"homebrew-keyring.pth").write keyring/site_packages
   end

@@ -14,9 +14,10 @@ class Redumper < Formula
   end
 
   def install
-    cmake_args = %w[
+    cmake_args = %W[
       -G Ninja
       -DREDUMPER_CLANG_USE_LIBCPP=ON
+      -DREDUMPER_VERSION_BUILD=#{version}
     ]
 
     ENV["CXX"] = llvm.opt_bin/"clang++"

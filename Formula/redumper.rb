@@ -1,14 +1,9 @@
 class Redumper < Formula
   desc "Low level CD dumper utility"
   homepage "https://github.com/superg/redumper"
-  url "https://github.com/superg/redumper/archive/refs/tags/build_503.tar.gz"
-  sha256 "62116a9f295e260fedfcb433e50b5e3d100a7c27a2a8df3e25fc1b6f398db8c1"
+  url "https://github.com/superg/redumper/archive/refs/tags/build_537.tar.gz"
+  sha256 "555419fde088a2f7c54f6c41554a80bfcd5a2c96aa205f09d82312c20c8bf35a"
   license "GPL-3.0-or-later"
-
-  bottle do
-    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/redumper-503"
-    sha256 cellar: :any_skip_relocation, ventura: "3d859114dd929bf0459962e062a50580a9c2dad1b1d680e3b3b4a213392ef89c"
-  end
 
   depends_on "cmake" => :build
   depends_on "llvm" => :build
@@ -31,6 +26,10 @@ class Redumper < Formula
     inreplace "drive.ixx",
       "\"BD-RE BH16NS55\"  , \"1.02\", \"N000200SIK92G9OF211\"",
       "\"BD-RE BH16NS55\"  , \"1.05\", \"N001601KL1O1JB1603\""
+
+    # Patch sources to undo CD->Disc rename that causes incompatibility with MPF.
+    # https://github.com/superg/redumper/commit/665a1b85d7e11f6d32ae3a1411df210a0f96468a
+    inreplace "redumper.ixx", "options.command == \"disc\"", "options.command == \"cd\""
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"

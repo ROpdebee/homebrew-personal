@@ -5,6 +5,11 @@ class Redumper < Formula
   sha256 "555419fde088a2f7c54f6c41554a80bfcd5a2c96aa205f09d82312c20c8bf35a"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/redumper-537"
+    sha256 cellar: :any_skip_relocation, ventura: "c32f93f39ecf0688ee91c37c889704d54753ae95c36b4ae8f9fa0abd91f6cedf"
+  end
+
   depends_on "cmake" => :build
   depends_on "llvm" => :build
   depends_on "ninja" => :build

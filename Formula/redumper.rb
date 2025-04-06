@@ -1,8 +1,8 @@
 class Redumper < Formula
   desc "Low level CD dumper utility"
   homepage "https://github.com/superg/redumper"
-  url "https://github.com/superg/redumper/archive/refs/tags/build_537.tar.gz"
-  sha256 "555419fde088a2f7c54f6c41554a80bfcd5a2c96aa205f09d82312c20c8bf35a"
+  url "https://github.com/superg/redumper/archive/refs/tags/build_438.tar.gz"
+  sha256 "fbbe780275175800eb42f7032c988fa9a99d726008c8222c6e6a900bf9ce6fdd"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -22,6 +22,7 @@ class Redumper < Formula
     cmake_args = %W[
       -G Ninja
       -DREDUMPER_CLANG_USE_LIBCPP=ON
+      -DREDUMPER_CLANG_LINK_OPTIONS=""
       -DREDUMPER_VERSION_BUILD=#{version}
     ]
 
@@ -31,10 +32,6 @@ class Redumper < Formula
     inreplace "drive.ixx",
       "\"BD-RE BH16NS55\"  , \"1.02\", \"N000200SIK92G9OF211\"",
       "\"BD-RE BH16NS55\"  , \"1.05\", \"N001601KL1O1JB1603\""
-
-    # Patch sources to undo CD->Disc rename that causes incompatibility with MPF.
-    # https://github.com/superg/redumper/commit/665a1b85d7e11f6d32ae3a1411df210a0f96468a
-    inreplace "redumper.ixx", "options.command == \"disc\"", "options.command == \"cd\""
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"

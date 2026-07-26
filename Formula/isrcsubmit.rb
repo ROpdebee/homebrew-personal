@@ -38,7 +38,7 @@ class Isrcsubmit < Formula
 
     # we depend on keyring, but that's a separate formula, so install a `.pth` file to link them
     site_packages = Language::Python.site_packages("python3.13")
-    keyring = Formula["keyring"].opt_libexec
+    keyring = formula_opt_libexec("keyring")
     (libexec/site_packages/"homebrew-keyring.pth").write keyring/site_packages
   end
 

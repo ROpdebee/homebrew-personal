@@ -6,8 +6,8 @@ class Redumper < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/ROpdebee/homebrew-personal/releases/download/redumper-503"
-    sha256 cellar: :any_skip_relocation, ventura: "3d859114dd929bf0459962e062a50580a9c2dad1b1d680e3b3b4a213392ef89c"
+    root_url "https://ghcr.io/v2/ropdebee/personal"
+    sha256 cellar: :any, arm64_tahoe: "b5d3379b733e00c46176f50b673c29812bec64c0ca81125b698ce28fca7b44b8"
   end
 
   depends_on "cmake" => :build

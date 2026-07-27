@@ -17,7 +17,7 @@ class Isrcsubmit < Formula
 
   depends_on "keyring"
   depends_on "libdiscid"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   resource "musicbrainzngs" do
     url "https://files.pythonhosted.org/packages/0a/67/3e74ae93d90ceeba72ed1a266dd3ca9abd625f315f0afd35f9b034acedd1/musicbrainzngs-0.7.1.tar.gz"
@@ -37,7 +37,7 @@ class Isrcsubmit < Formula
     virtualenv_install_with_resources
 
     # we depend on keyring, but that's a separate formula, so install a `.pth` file to link them
-    site_packages = Language::Python.site_packages("python3.13")
+    site_packages = Language::Python.site_packages("python3.14")
     keyring = formula_opt_libexec("keyring")
     (libexec/site_packages/"homebrew-keyring.pth").write keyring/site_packages
   end
